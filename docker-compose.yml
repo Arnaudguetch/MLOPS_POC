@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  
+  jenkins: 
+    image: jenkins/jenkins
+    container_name: POC_JENKINS
+    restart: always
+
+  Model_learning:
+    build:
+      context: .
+      dockerfile: dockerfile/Dockerfile.ml
+    container_name: POC_ML
+    restart: always
+
+  mlflow: 
+    image: mlflow
+    container_name: POC_MLFLOW
+    restart: always
+
+  app:
+    container_name: POC_STREAMLIT
+    restart: always
+
+  sqlite:
+    image: sqlite3
+    container_name: POC_SQL
+    depends_on:
+      - Model_learning 
+
+  kubernetes:
+    image: kubernetes 
+    container_name: POC_KUBE
+    restart: always

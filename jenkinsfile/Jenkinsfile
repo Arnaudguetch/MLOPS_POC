@@ -1,0 +1,28 @@
+pipeline{
+    agent any
+
+    stages{
+        stage("Checkout develop-branch"){
+            steps{
+                script {
+                    echo "Checkout develop-branch"
+                    sh "..."
+                }
+            }
+        }
+        stage {
+            
+        }
+    }
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
+    }
+}
