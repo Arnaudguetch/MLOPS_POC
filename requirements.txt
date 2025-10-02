@@ -1,0 +1,13 @@
+pandas
+numpy
+matplotlib
+seaborn
+streamlit
+minikube
+scikit-learn
+openai
+pytest
+python-dotenv
+python-jenkins
+jenkins-job-builder
+mlflow
